@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--SEO-->
+    <meta name="keywords" content="moda, ropa, streetwear, fashion, oversize, buzos, remeras, shorts, jeans, gorras, modelaje">
+    <meta name="description" content="Peeps custom es una empresa de moda que fabrica ropa streetwear realiza envios gratuitos a toda Argentina, ofrece 3 cuotas sin interes y vende productos de alta calidad unisex">
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/402670887e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--Java Script-->
+    <script src="javascript/app.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="../styles/main.css">
+    <!--BS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Peeps Custom Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body class="body" >
+	<section class="banner_logo">
+		<img src="../images/logo peeps blanco y negro.png" alt="logo-peeps">
+	  </section>
+		 <!-- Header -->
+	   <header class="header">
+		<nav class="navbar navbar-expand-lg ">
+			<div class="container-fluid">
+			  <a class="navbar-brand" href="index.html"></a>
+			  <div  id="navbarNav">
+				<ul class="navbar-nav">
+				  <li class="nav-item">
+					<a class="nav-link" href="../index.html">Inicio</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="../pages/servicios.html">Servicios</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="../pages/eventos.html">Eventos</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="../pages/contacto.html">Contacto</a>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+	   </header>
+    
+<!--Formulario-->
+
+<section class="formulario-peeps">
+	<div class="contact_form">
+        <div class="formulario">
+            <h1>Formulario de contacto</h1>
+            <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
+            <form action="submeter-formulario.php" method="post">
+                <label for="nombre" class="colocar_nombre">Nombre
+                    <span class="obligatorio">*</span>
+                </label>
+                <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+
+                <label for="email" class="colocar_email">Email
+                    <span class="obligatorio">*</span>
+                </label>
+                <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+
+                <label for="telefone" class="colocar_telefono">Teléfono</label>
+                <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+
+                <label for="website" class="colocar_website">Sitio web</label>
+                <input type="url" name="introducir_website" id="website" placeholder="Escribe la URL de tu web">
+
+                <label for="asunto" class="colocar_asunto">Asunto
+                    <span class="obligatorio">*</span>
+                </label>
+                <input type="text" name="introducir_asunto" id="asunto" required="obligatorio" placeholder="Escribe un asunto">
+
+                <label for="mensaje" class="colocar_mensaje">Mensaje
+                    <span class="obligatorio">*</span>
+                </label>
+                <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea>
+
+                <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+
+                <p class="aviso">
+                    <span class="obligatorio"> * </span>los campos son obligatorios.
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+   
+ <!-- Footer -->
+    <footer class="footer">
+		<div class="box-container">
+		  <div class="box">
+			<figure>
+			  <a href="#">
+				<img class="logo-footer" src="../images/logo peeps blanco y negro.png" alt="logo">
+			  </a>
+			</figure>
+		  </div>
+		  <div class="box">
+			<h2 class="texto-footer">© 2023 Peeps Custom Todos los Derechos Reservados.</h2>
+		  </div>
+		  <div class="box">
+			<div class="red-social">
+			  <a href="https://www.instagram.com/peepscustom/" class="fa fa-instagram"></a>
+			  <a href="https://wa.me/message/A4NKBNDF5SADM1" class="fa fa-whatsapp"></a>
+			  <a href="https://www.youtube.com/watch?v=XsLK5FEBSUs&ab_channel=Peeps" class="fa fa-youtube"></a>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
