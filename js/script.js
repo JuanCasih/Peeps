@@ -6,8 +6,9 @@ console.log (`El email del cliente es `+ datosMail);
 let nombre= prompt ("ingresa tu nombre");
 let apellido= prompt ("ingresa tu apellido");
 
+
 let nombrecompleto = nombre + "" + apellido;
-alert ("Bienvenido a la familia ", nombrecompleto );
+alert ("Bienvenido a la familia " + nombrecompleto );
 
 /*let tiempo = `soleado`
 if (tiempo == `lluvioso`){
@@ -116,11 +117,23 @@ for(const remera of remeras){
     console.log(remera.nombre)
 }
 /* Arrays de objetos */
-const carrito = []
+const carritos = []
 const agregarProducto= () => {
     const id = prompt ('Ingresa el tipo de producto')
     const talle= prompt ('Ingresa el talle del producto')
-    const carritos={id, talle}
-    carrito.push (carrritos)
+    const carrito={id, talle}
+    
 }
 agregarProducto ()
+
+alert ("El producto ha sido agregado al carrito" );
+
+
+let i=1
+while(i<6){
+    console.log("Iteracion numero " + i)
+    i++;
+}
+
+
+
