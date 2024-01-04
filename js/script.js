@@ -1,5 +1,6 @@
 /* Este proyecto esta estructurado para mi marca de ropa, donde la gente en este portal podra comprar mis productos disponibles en web*/
 
+/* Pedir datos al cliente */
 let datosMail= prompt ("Hola buen dia bienvenido a peepscustom, para formar parte de esta familia te solicitamos que ingreses tu direccion de correo electronico");
 console.log (`El email del cliente es `+ datosMail);
 
@@ -7,55 +8,10 @@ let nombre= prompt ("ingresa tu nombre");
 let apellido= prompt ("ingresa tu apellido");
 
 
-let nombrecompleto = nombre + "" + apellido;
+let nombrecompleto = nombre + " " + apellido;
 alert ("Bienvenido a la familia " + nombrecompleto );
 
-/*let tiempo = `soleado`
-if (tiempo == `lluvioso`){
-    console.warn (`llevar paraguas`);
-}
-if (tiempo == `soleado`){
-    console.warn (`ir con remera`);
-}*/
-/*if (tiempo == `lluvioso`){
-    console.warn (`llevar paraguas`);
-}else{
-    console.log (`ir con remera`)
-}*/
-/*let EdadMinima =18;
-if(EdadMinima >= 18){
-    console.log (`puede entrar a la disco`);
-}else{
-    console.warn (`a dormir gil`);
-}*/
-/*let lenguajeRequerido = `javascript`
-let idiomaRequerido = `ingles`
-
-if((lenguajeRequerido ==`javascript`)||(idiomaRequerido==`ingles`)){
-    console.log (`felicidades esta contratado`);
-}else{
-    console.warn (`Debes cumplir con todos los requisitos`);
-}*/
-/*for(let i=0;i<10;i++){
-    if(i==5){
-        console.warn("iteracion interrumpida en el ciclo",i, "por la clausula break");
-        break;
-    }
-    alert(i);
-
-} */
-/*let i = 1;
-while (i<6){
-    console.log(`iteracion numero ` +i);
-    i++;
-}*/
-
-/*let numero=0 
-do{
-    numero= prompt ("ingresa numero");
-    console.log (numero);
-} while (parseInt(numero))*/
-
+/* Calidad de los productos */
 let producto = prompt (`Que tipo de producto estas buscando? Buzos, Remeras, Shorts, Pantalones`);
 switch(producto){
     case `Buzos`:
@@ -74,66 +30,98 @@ switch(producto){
     alert(`no tenemos el producto que estas buscando`);
     break;        
 }
+/* Carrito de compras */
+const productos = [
+    { nombre: "Remera", precio: 25 },
+    { nombre: "Pantalón", precio: 40 },
+    { nombre: "Short", precio: 20 },
+    { nombre: "Top", precio: 10 },
+    { nombre: "Gorra", precio: 5 },
+    { nombre: "Buzo", precio: 60 },
+  ];
 
-/*function MiFuncion (){
-    console.log (uno);
-    console.log (dos);
-}
-MiFuncion();*/
+  let carrito = [];
+  let totalCompra = 0;
 
-/*function retornarString(){
-    console.log (uno);
-    console.log (dos);
-    return`la funcion devuelve un string de texto`
-}
-let devuelveValor= (retornarString())*/
+  function mostrarProductos() {
+    console.table(productos);
+  }
 
-/*function saludar(nombre,edad){
-    console.log ('Hola, mi nombre es '+nombre+'y tengo '+edad+'culia.');
-}
-saludar ("juan", "24");*/
-/*let auto= `yaris`
-function pasear(){
-auto= `corrolla`;
-function lavar(){
-console.log (`Enviar a lavar el `+ auto);
-}
-lavar()
-console.log(`Paseando en el`+ auto)
-}
-pasear()*/
-/*const saludar= nombre => console.log ("hola "+ nombre)
-saludar ("juan")*/
-/* Arrays */
-const prendas= ['remera', 'buzo' , 'pantalon' , 'short']
-console.log (prendas.sort().reverse())
-/* Objetos literales*/
-const remeras=[
-{id: 'material', nombre:'jersey 20/1'},
-{id: 'talle', nombre:'1/2'},
-{id: 'molderia', nombre:'oversize'},
-]
-for(const remera of remeras){
-    console.log(remera.nombre)
-}
+  function confirmarCompra() {
+    const respuesta = confirm("¿Deseas comprar algo de nuestra marca de ropa?");
+    if (respuesta) {
+      agregarAlCarrito();
+    } else {
+      alert("¡Esperamos verte pronto! No dudes en visitarnos cuando quieras.");
+    }
+  }
+
+  function agregarAlCarrito() {
+    let continuar = true;
+    while (continuar) {
+      const seleccion = prompt("Ingrese el número del producto que desea agregar al carrito:\n" + obtenerListaProductos() + "\nIngrese '0' para finalizar.");
+      if (seleccion === '0' || seleccion === null) {
+        continuar = false;
+        mostrarTotalCompra();
+      } else {
+        const indiceProducto = parseInt(seleccion) - 1;
+        if (indiceProducto >= 0 && indiceProducto < productos.length) {
+          carrito.push(productos[indiceProducto]);
+          totalCompra += productos[indiceProducto].precio;
+          console.log(`¡${productos[indiceProducto].nombre} agregado al carrito!`);
+        } else {
+          alert("Por favor, ingrese un número válido.");
+        }
+      }
+    }
+  }
+
+  function obtenerListaProductos() {
+    let lista = '';
+    productos.forEach((producto, index) => {
+      lista += `${index + 1}. ${producto.nombre} - Precio: $${producto.precio}\n`;
+    });
+    return lista;
+  }
+
+  function mostrarTotalCompra() {
+    if (carrito.length > 0) {
+      alert(`Total de la compra: $${totalCompra}. ¡Gracias por confiar en Peeps tus productos han sido agregados al carrito exitosamente!`);
+    } else {
+      alert("No has agregado ningún producto al carrito. ¡Esperamos verte pronto!");
+    }
+  }
+
+  mostrarProductos();
+  setTimeout(confirmarCompra, 3000);
+
 /* Arrays de objetos */
-const carritos = []
-const agregarProducto= () => {
-    const id = prompt ('Ingresa el tipo de producto')
-    const talle= prompt ('Ingresa el talle del producto')
-    const carrito={id, talle}
-    
+const arrayDeObjetos=[
+    {
+        nombre:"Juan",
+        edad: 24,
+        prendaFavorita: "remeras oversize",
+    },
+    {
+        nombre:"Lucia",
+        edad: 21,
+        prendaFavorita: "tops",
+    },
+    {
+        nombre:"Facu",
+        edad: 27,
+        prendaFavorita: "jeans",
+    },
+]
+
+for (let i= 0; i < arrayDeObjetos.length; i++)
+{
+    console.log("=====================");
+    console.log ("Nombre: " + arrayDeObjetos [i].nombre);
+    console.log ("Edad: " + arrayDeObjetos [i].edad);
+    console.log ("Prenda favorita: " + arrayDeObjetos [i].prendaFavorita);
 }
-agregarProducto ()
 
-alert ("El producto ha sido agregado al carrito" );
-
-
-let i=1
-while(i<6){
-    console.log("Iteracion numero " + i)
-    i++;
-}
 
 
 
